@@ -4,29 +4,44 @@
 
 幻灯片用中文还是英文，由你这一轮指定，不默认英文。中文默认微软雅黑（Microsoft YaHei），西文默认 Calibri。
 
-## 页面长什么样
+## 幻灯片示例
 
-下面三页是经授权的真实页适配，用来看排版，不是新做的实验结果。两段原理动画是仓库里的 GIF 原文件，会在页面上循环播放。
+### 把三篇论文排在同一页
 
-### 固定窗口里，纹理怎么变
+每列放一篇论文的结构图、结果图和出处。读完三列，再回到页底的问题：这些设计为什么都要分割视场？
 
-左侧播放固定 uv 窗口的序列，右侧留下标注深度 1.00 m 和 0.20 m 的静态对照。底部灰框只保留一句定性结论。
+[![三列超广角成像方案，各列含结构图、结果图和文献来源](assets/showcase-literature-comparison.png)](assets/showcase-literature-comparison.png)
 
-![固定 uv 窗口的整页原理动画：左侧序列在播，右侧是两张标注深度，底部是灰色结论框](assets/principle-fixed-uv.gif)
+<table>
+<tr>
+<td width="50%" valign="top">
+<strong>公式推导</strong><br>
+两条误差律、消去共同项、代入尺度示例，一步接一步。<br><br>
+<a href="assets/showcase-formula-derivation.png"><img src="assets/showcase-formula-derivation.png" alt="从两条误差律推导误差比，再代入基线和口径做数量级比较" width="470"></a>
+</td>
+<td width="50%" valign="top">
+<strong>几何对照</strong><br>
+用同一组视场条件比较双目和单目，直接标出重叠区域。<br><br>
+<a href="assets/showcase-field-of-view.png"><img src="assets/showcase-field-of-view.png" alt="双目和单目的视场示意，比较有限视角和 180 度两种情况" width="470"></a>
+</td>
+</tr>
+</table>
 
-### 两类 TX 放在同一视野里比较
+## 动图示例
 
-VCSEL 与 random TX 的 seed 7 纹理并排播放，粗斑块和细颗粒都留在画面里。这是两类 TX，不是两次曝光，也不做双帧比值。
+### 扫一遍双目的共同视场
 
-![两类 TX 的整页对照动画：左右并列播放，底部灰色结论框写局部显示变化](assets/principle-comparison.gif)
+虚线沿距离扫描。左图蓝线是两台相机在该截面都能看到的宽度，右图金线是单台相机的可见宽度。两边采用相同的半视场角，长度以基线为单位。
 
-同一页的静态导出在 [assets/slide-fixed-uv.png](assets/slide-fixed-uv.png) 和 [assets/slide-comparison.png](assets/slide-comparison.png)。静态图只用于看版式，不能代替上面的 GIF。
+![双目和单目视场的循环动画，扫描线从近处移向远处并显示各自宽度](assets/showcase-stereo-field-scan.gif)
 
-### 结构用一条路径读完
+### Q、K、V 同步展开
 
-输入怎么分组、主干哪些共享、分支输出到哪里，一页里走完。灰框把要记住的差异收成一句：只改变首层卷积。
+从同一个输入 X 出发，三套投影在同一步出现。下一步再解释 Query、Key、Value 各自的作用。GIF 用停顿复现 PPT 的点击节奏。
 
-![结构示意图：输入分组、共享主干和分支输出，底部灰色结论框](assets/slide-coordinate-architecture.png)
+![Attention 教学 GIF，先显示输入 X，再同时显示 Q、K、V 三条投影，随后分步解释](assets/showcase-qkv-parallel-build.gif)
+
+[样页与动图的来源、帧含义和演示条件](assets/showcase.md)
 
 ## 为什么这样排
 
@@ -71,33 +86,11 @@ VCSEL 与 random TX 的 seed 7 纹理并排播放，粗斑块和细颗粒都留�
 
 ## 仓库里有什么
 
-```text
-SKILL.md                          # 主流程
-README.md
-references/
-  style-guide.md                  # 视觉、公式、引用、讲稿
-  quality-checklist.md            # 验收
-  prompt-templates.md             # 提示词
-  anonymized-case.md              # 匿名过程
-assets/
-  principle-fixed-uv.gif          # 整页原理动画
-  principle-comparison.gif        # 整页 TX 对照动画
-  slide-fixed-uv.png              # 同页静态导出
-  slide-comparison.png
-  slide-coordinate-architecture.png
-  captions.md                     # 图注与证据边界
-  manifest.json
-```
-
-本仓库不包含造页脚本、字体文件、机构 logo 或可编辑的演示文稿。OMML 和点击动画取决于你当时的工具，开始前要检查。
-
-## 这些示例能说明什么
-
-它们说明图像优先、灰色结论框和整页原理动画怎么配合。完整图注在 [assets/captions.md](assets/captions.md)。使用时记住这几条：
-
-- 三页来自最终演示文稿的适配：去掉了页脚标识，灰框收成独立短句。不是未改动的原页，也不是新验证的研究结果。
-- 两段 GIF 各保留原序列 64 帧、100 ms/帧。比较页是两类 TX 的显示纹理，不是双曝光。只能作定性观察，不能据此推断物理光强、相关性或性能优劣。
-- 这组图是英文页。渲染环境没有 Calibri，实际回退为 Carlito，不能当成微软雅黑的实装效果。
+- [SKILL.md](SKILL.md) 记录制作流程与默认约定。
+- [风格指南](references/style-guide.md) 有版式、原生公式、引用和讲稿规范。
+- [验收清单](references/quality-checklist.md) 适用于渲染与交付检查。
+- [提示词模板](references/prompt-templates.md) 和 [匿名案例](references/anonymized-case.md) 可用于按任务调整流程。
+- [本页展示素材](assets/showcase.md) 和 [早期样页图注](assets/captions.md) 记录各自的出处与演示条件。
 
 ## 维护
 
