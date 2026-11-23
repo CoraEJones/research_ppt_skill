@@ -1,0 +1,101 @@
+{
+  "label": "适配真实页示例（非原页原样发布）",
+  "source_slides": [
+    22,
+    23,
+    43
+  ],
+  "edits": [
+    "整形删除页脚标识图片及页码底色",
+    "保留全幅16:9页面、原页码和图像优先布局",
+    "灰框结论精简为独立短句",
+    "真实源序列合成整页GIF，不生成新研究结果"
+  ],
+  "animation_support_px": [
+    96,
+    93
+  ],
+  "occluded_source_rows_not_reconstructed": 3,
+  "audit": {
+    "static_pages_visually_checked": 3,
+    "dynamic_frames_visually_reviewed_via_contacts": 128,
+    "decoded_texture_rgb_exact_after_gif_encoding": true,
+    "identity_visible": "none found",
+    "public_package_contains_pptx_or_hidden_media": false
+  },
+  "font_rendering": {
+    "requested_english": "Calibri",
+    "actual_english_fallback": "Carlito",
+    "chinese_default": "Microsoft YaHei / 微软雅黑",
+    "chinese_font_not_installed": true
+  },
+  "files": [
+    {
+      "file": "principle-comparison.gif",
+      "bytes": 6172871,
+      "sha256": "270e2cc262eed44133ea0cbc9aff63d5349f6aca39a090f207582984b30bd23c",
+      "size_px": [
+        1024,
+        576
+      ],
+      "graphic_control": 64,
+      "application": "NETSCAPE2.0 loop only",
+      "comments_or_text_extensions": 0,
+      "frames": 64,
+      "frame_duration_ms": 100,
+      "total_duration_ms": 6400,
+      "loop": "infinite",
+      "source_slide": 23
+    },
+    {
+      "file": "principle-fixed-uv.gif",
+      "bytes": 3285245,
+      "sha256": "116253acfecafaa1dca58cc855ec042d44a1db65dca89eb4bf9c470231cba98e",
+      "size_px": [
+        1024,
+        576
+      ],
+      "graphic_control": 64,
+      "application": "NETSCAPE2.0 loop only",
+      "comments_or_text_extensions": 0,
+      "frames": 64,
+      "frame_duration_ms": 100,
+      "total_duration_ms": 6400,
+      "loop": "infinite",
+      "source_slide": 22
+    },
+    {
+      "file": "slide-comparison.png",
+      "bytes": 145152,
+      "sha256": "ecfba4bcd039bcfe6816639ae36a6c52f787371392d8018a64aaa3de2752c174",
+      "size_px": [
+        1600,
+        900
+      ],
+      "metadata": "No EXIF, text, or ancillary chunks",
+      "source_slide": 23
+    },
+    {
+      "file": "slide-coordinate-architecture.png",
+      "bytes": 163373,
+      "sha256": "9519c5497742e86c1b50caa1cd0068ec53c89020ff0faa282863d8c9541c06fa",
+      "size_px": [
+        1600,
+        900
+      ],
+      "metadata": "No EXIF, text, or ancillary chunks",
+      "source_slide": 43
+    },
+    {
+      "file": "slide-fixed-uv.png",
+      "bytes": 594227,
+      "sha256": "6cd829da9640774967961c75c53bbd2daaab4309062e38da67d2889d3366030a",
+      "size_px": [
+        1600,
+        900
+      ],
+      "metadata": "No EXIF, text, or ancillary chunks",
+      "source_slide": 22
+    }
+  ]
+}
